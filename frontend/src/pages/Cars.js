@@ -1,10 +1,11 @@
+import API_URL from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import CarImage from '../components/CarImage';
 import SkeletonCard from '../components/SkeletonCard';
 
-const API = 'http://localhost:8080/api/cars';
+const API = `${API_URL}/api/cars`;
 
 const Cars = () => {
   const [cars, setCars] = useState([]);

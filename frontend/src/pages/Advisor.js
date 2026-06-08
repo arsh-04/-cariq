@@ -1,3 +1,4 @@
+import API_URL from '../config';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -44,7 +45,7 @@ const Advisor = () => {
     try {
       const price = budgetToPrice[data.budget] || { min: 0, max: 9999999 };
 
-      const allRes = await axios.get('http://localhost:8080/api/cars');
+      const allRes = await axios.get('${API_URL}/api/cars');
       let results = allRes.data;
 
       // Filter by price

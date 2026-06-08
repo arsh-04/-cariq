@@ -1,3 +1,4 @@
+import API_URL from '../config';
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -37,7 +38,7 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:8080/api/chat', {
+      const res = await axios.post('${API_URL}/api/chat', {
         message: userMsg
       });
       setMessages(prev => [...prev, { role: 'ai', text: res.data.reply }]);

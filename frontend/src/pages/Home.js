@@ -1,3 +1,4 @@
+import API_URL from '../config';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -15,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/cars/new')
+    axios.get('${API_URL}/api/cars/new')
       .then(r => setCars(r.data.slice(0,3)))
       .catch(()=>{});
   },[]);
