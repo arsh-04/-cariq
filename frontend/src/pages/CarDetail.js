@@ -137,7 +137,7 @@ const CarDetail = () => {
             gridTemplateColumns: '1fr 1fr',
             gap: '16px'
           }}>
-            {specs.map((spec, i) => (
+            {(Array.isArray(specs) ? specs : []).map((spec, i) => (
               <div key={i} style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border)',

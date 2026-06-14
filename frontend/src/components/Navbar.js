@@ -61,7 +61,7 @@ const Navbar = () => {
 
       {/* Links */}
       <div style={{ display: 'flex', gap: '4px' }}>
-        {links.map(({ path, label }) => (
+        {(Array.isArray(links) ? links : []).map(({ path, label }) => (
           <Link key={path} to={path} style={{
             textDecoration: 'none', padding: '6px 14px',
             borderRadius: '8px', fontSize: '14px',

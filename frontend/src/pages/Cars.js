@@ -127,7 +127,7 @@ export default function Cars() {
         </div>
       ) : (
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(280px,1fr))', gap:'20px' }}>
-          {paginated.map(car => (
+          {(Array.isArray(paginated) ? paginated : []).map(car => (
             <div key={car.id} onClick={()=>navigate(`/cars/${car.id}`)} style={{
               background:'var(--bg-card)', border:'1px solid var(--border)',
               borderRadius:'18px', padding:'22px', cursor:'pointer', transition:'all 0.25s'

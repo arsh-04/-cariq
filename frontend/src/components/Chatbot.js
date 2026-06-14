@@ -120,7 +120,7 @@ const Chatbot = () => {
             flex: 1, overflowY: 'auto', padding: '16px',
             display: 'flex', flexDirection: 'column', gap: '12px'
           }}>
-            {messages.map((msg, i) => (
+            {(Array.isArray(messages) ? messages : []).map((msg, i) => (
               <div key={i} style={{
                 display: 'flex',
                 justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start'
@@ -157,7 +157,7 @@ const Chatbot = () => {
               padding: '0 16px 8px',
               display: 'flex', flexWrap: 'wrap', gap: '6px'
             }}>
-              {suggestions.map((s, i) => (
+             {(Array.isArray(suggestions) ? suggestions : []).map((s, i) => (
                 <button key={i} onClick={() => {
                   setInput(s);
                   setTimeout(() => sendMessage(), 100);

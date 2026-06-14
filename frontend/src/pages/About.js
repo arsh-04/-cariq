@@ -99,7 +99,7 @@ const About = () => {
             background: 'var(--border)'
           }} />
 
-          {timeline.map((item, i) => (
+          {(Array.isArray(timeline) ? timeline : []).map((item, i) => (
             <div key={i} style={{
               display: 'flex', gap: '40px',
               marginBottom: '48px', position: 'relative'
@@ -155,7 +155,7 @@ const About = () => {
           gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
           gap: '20px'
         }}>
-          {techStack.map((tech, i) => (
+          {(Array.isArray(techStack) ? techStack : []).map((tech, i) => (
             <div key={i} style={{
               background: 'var(--bg-card)',
               border: `1px solid ${tech.color}33`,

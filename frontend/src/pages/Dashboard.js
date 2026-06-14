@@ -105,7 +105,7 @@ const Dashboard = () => {
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '24px', marginBottom: '40px'
         }}>
-          {recentCars.map(car => (
+          {(Array.isArray(recentCars) ? recentCars : []).map(car => (
             <div key={car.id}
               onClick={() => navigate(`/cars/${car.id}`)}
               style={{

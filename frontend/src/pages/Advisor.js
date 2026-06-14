@@ -316,7 +316,7 @@ const Advisor = () => {
               gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
               gap: '24px'
             }}>
-              {cars.map((car, index) => (
+              {(Array.isArray(cars) ? cars : []).map((car, index) => (
                 <div key={car.id} style={{
                   background: 'var(--bg-card)',
                   border: index === 0 ? '1px solid var(--primary)' : '1px solid var(--border)',

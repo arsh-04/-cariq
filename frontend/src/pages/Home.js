@@ -16,7 +16,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('${API_URL}/api/cars/new')
+    axios.get(`${API_URL}/api/cars/new`)
       .then(r => setCars(r.data.slice(0,3)))
       .catch(()=>{});
   },[]);
@@ -185,7 +185,7 @@ export default function Home() {
             }}>View all →</button>
           </div>
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))', gap:'20px' }}>
-            {cars.map(car=>(
+            {(Array.isArray(cars) ? cars : []).map(car=>(
               <div key={car.id} onClick={()=>navigate(`/cars/${car.id}`)} style={{
                 background:'var(--bg-card)', border:'1px solid var(--border)',
                 borderRadius:'18px', padding:'22px', cursor:'pointer', transition:'all 0.25s'

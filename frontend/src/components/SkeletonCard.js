@@ -14,7 +14,7 @@ const SkeletonCard = () => (
       marginBottom: '16px'
     }} />
     <style>{`@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}`}</style>
-    {['60px','80%','50%'].map((w,i) => (
+    {['60px','80%','50%'](w,i) => (
       <div key={i} style={{
         width: w, height: i === 0 ? '10px' : i === 1 ? '16px' : '12px',
         borderRadius: '6px', background: '#1c1c1c',
